@@ -26,6 +26,12 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const scrollTo = (id) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    setIsMenuOpen(false);
+  };
+
   const regions = [
     { name: 'Purwokerto', path: '/purwokerto' },
     { name: 'Purbalingga', path: '/purbalingga' },
@@ -63,26 +69,23 @@ const Header = () => {
           </div>
         </div>
 
-
         <nav className={`nav-container ${isMenuOpen ? 'active' : ''}`}>
           <ul className="nav-menu">
-            <li><a href="#program" className="nav-link" onClick={() => setIsMenuOpen(false)}>Benefit</a></li>
-            <li><a href="#hotel" className="nav-link" onClick={() => setIsMenuOpen(false)}>Hotel</a></li>
-            <li><a href="#benefit" className="nav-link" onClick={() => setIsMenuOpen(false)}>Fasilitas</a></li>
-            <li><a href="#testimoni" className="nav-link" onClick={() => setIsMenuOpen(false)}>Testimoni</a></li>
+            <li><button className="nav-link" onClick={() => scrollTo('program')}>Benefit</button></li>
+            <li><button className="nav-link" onClick={() => scrollTo('hotel')}>Hotel</button></li>
+            <li><button className="nav-link" onClick={() => scrollTo('benefit')}>Fasilitas</button></li>
+            <li><button className="nav-link" onClick={() => scrollTo('testimoni')}>Testimoni</button></li>
             <li className="mobile-cta-wrapper">
-              <a href="#daftar" className="btn btn-primary cta-button mobile-cta" onClick={() => setIsMenuOpen(false)}>
+              <button className="btn btn-primary cta-button mobile-cta" onClick={() => scrollTo('daftar')}>
                 Daftar Sekarang
-              </a>
+              </button>
             </li>
           </ul>
         </nav>
 
-
-        <a href="#daftar" className="btn btn-primary cta-button desktop-cta">
+        <button className="btn btn-primary cta-button desktop-cta" onClick={() => scrollTo('daftar')}>
           Daftar Sekarang
-        </a>
-
+        </button>
 
         <div className={`hamburger ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
           <span className="line line1"></span>
