@@ -52,7 +52,7 @@ const Pricing = () => {
                 <li><span className="check-icon">✅</span> Handling Bandara & Perlengkapan</li>
               </ul>
               <div className="pricing-cta-wrap">
-                <a href="#daftar" className="btn btn-primary btn-block">Daftar Sekarang</a>
+                <button className="btn btn-primary btn-block" onClick={() => { const el = document.getElementById('daftar'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }}>Daftar Sekarang</button>
               </div>
             </div>
           </div>

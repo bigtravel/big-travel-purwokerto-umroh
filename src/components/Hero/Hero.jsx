@@ -26,7 +26,7 @@ const Hero = ({ region, landmarkImg, bgPosition = 'center' }) => {
           </p>
           <div className="hero-cta-group">
             <a href="https://wa.me/62816677408" className="btn btn-primary hero-btn" target="_blank" rel="noreferrer">Konsultasi Gratis via WA</a>
-            <a href="#hotel" className="btn btn-outline hero-btn-outline">Lihat Detail Paket</a>
+            <button className="btn btn-outline hero-btn-outline" onClick={() => { const el = document.getElementById('hotel'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }}>Lihat Detail Paket</button>
           </div>
         </div>
 
