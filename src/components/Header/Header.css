@@ -1,0 +1,236 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+.header.transparent {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.header.transparent .nav-link {
+  color: var(--color-white);
+}
+
+.header.transparent .logo-subtitle,
+.header.transparent .region-separator {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.header.transparent .logo-title {
+  color: var(--color-white);
+}
+
+.header.transparent .hamburger .line {
+  background-color: var(--color-white);
+}
+
+.header.transparent .hamburger.open .line {
+  background-color: var(--color-dark);
+}
+
+.header.scrolled {
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  padding: 0.8rem 0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.logo-text-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-title {
+  font-family: var(--font-primary);
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.logo-subtitle {
+  font-family: var(--font-secondary);
+  font-size: 0.65rem;
+  color: var(--color-gray);
+  margin-top: 0.3rem;
+  letter-spacing: 0.5px;
+}
+
+.region-link {
+  color: inherit;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.region-link:hover {
+  color: var(--color-primary);
+}
+
+.region-link.active-region {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.header.transparent .region-link:hover,
+.header.transparent .region-link.active-region {
+  color: var(--color-gold);
+}
+
+.region-separator {
+  color: var(--color-gray);
+  margin: 0 0.2rem;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-link {
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--color-dark);
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+}
+
+.cta-button {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  z-index: 1001;
+}
+
+.hamburger .line {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--color-dark);
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger.open .line1 {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.open .line2 {
+  opacity: 0;
+}
+
+.hamburger.open .line3 {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.mobile-cta-wrapper {
+  display: none;
+}
+
+
+@media (max-width: 900px) {
+  .logo-subtitle {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  
+  .desktop-cta {
+    display: none;
+  }
+  
+  .nav-container {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--color-white);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 6rem;
+    transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 1000;
+  }
+
+  .nav-container.active {
+    right: 0;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .nav-link {
+    font-size: 1.2rem;
+  }
+  
+  .header.transparent .nav-link {
+    color: var(--color-dark);
+  }
+  
+  .mobile-cta-wrapper {
+    display: block;
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .mobile-cta {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    display: inline-block;
+  }
+}

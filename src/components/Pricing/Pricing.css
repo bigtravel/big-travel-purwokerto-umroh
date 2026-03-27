@@ -1,0 +1,187 @@
+.pricing-section {
+  padding: 5rem 0;
+  background-color: var(--color-light-gray);
+}
+
+.pricing-box {
+  background-color: var(--color-white);
+  border: 3px solid var(--color-gold);
+  border-radius: var(--radius-xl);
+  padding: 3rem;
+  box-shadow: 0 15px 30px rgba(195, 154, 63, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(90deg, var(--color-gold), #ffd24c, var(--color-gold));
+}
+
+.pricing-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px dashed rgba(0,0,0,0.1);
+}
+
+.package-title {
+  color: var(--color-gray);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.package-price {
+  color: var(--color-primary);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+.currency {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 0.8rem;
+}
+
+.amount {
+  font-size: 4rem;
+  font-weight: 800;
+  font-family: var(--font-primary);
+  line-height: 1;
+}
+
+.per-pax {
+  font-size: 1.2rem;
+  color: var(--color-gray);
+  margin-top: 2rem;
+  font-weight: 500;
+}
+
+.pricing-split {
+  display: flex;
+  gap: 3rem;
+}
+
+.pricing-left, .pricing-right {
+  flex: 1;
+}
+
+.split-title {
+  font-size: 1.5rem;
+  color: var(--color-dark);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.hotel-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hotel-card {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background: var(--color-light-gray);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  transition: transform 0.3s ease;
+}
+
+.hotel-card:hover {
+  transform: translateX(10px);
+  background: rgba(0, 141, 145, 0.05);
+}
+
+.hotel-img {
+  width: 90px;
+  height: 90px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+}
+
+.hotel-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.hotel-location {
+  font-size: 0.85rem;
+  color: var(--color-secondary);
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.hotel-name {
+  font-size: 1.15rem;
+  color: var(--color-dark);
+}
+
+.benefit-list {
+  list-style: none;
+  font-size: 1.1rem;
+  color: var(--color-dark);
+}
+
+.benefit-list li {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.check-icon {
+  font-size: 1.2rem;
+}
+
+.pricing-cta-wrap {
+  margin-top: 2.5rem;
+}
+
+.btn-block {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 1.2rem;
+}
+
+@media (max-width: 992px) {
+  .pricing-split {
+    flex-direction: column;
+  }
+  .pricing-left {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .pricing-box {
+    padding: 1.5rem 1rem;
+  }
+  .package-title {
+    font-size: 1.1rem;
+  }
+  .amount {
+    font-size: 2.2rem;
+  }
+  .currency {
+    font-size: 1.2rem;
+    margin-top: 0.4rem;
+  }
+  .per-pax {
+    font-size: 1rem;
+    margin-top: 1.2rem;
+  }
+  .split-title {
+    font-size: 1.3rem;
+  }
+}
